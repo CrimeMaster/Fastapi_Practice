@@ -93,7 +93,7 @@ def create_newsUrl(url : Optional[str] = None):
     
     return news[next_key]
 
-@app.delete("/delete-News/{news_id}")
+@app.delete("/delete-news/{news_id}")
 def delete_news(news_id: int):
     if news_id not in news:
         return {"Error": "news does not exist"}
@@ -101,7 +101,7 @@ def delete_news(news_id: int):
     del news[news_id]
     return {"Message": "News Deleted Succesfully"}
 
-@app.delete("/delete-News")
+@app.delete("/delete-news")
 def delete_newsTitle(title : Optional[str] = None):
     # Check if news with the same title already exists
     exists = any(news[news_id]["Title"] == title for news_id in news)
