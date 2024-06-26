@@ -113,7 +113,7 @@ def delete_newsTitle(title : Optional[str] = None):
             del news[news_id]
             return {"Message": "News Deleted Succesfully"}
                 
-@app.put("/update-student/{news_id}")
+@app.put("/update-news/{news_id}")
 def update_news(news_id: int, student: UpdateNews):
     if news_id not in news:
         return {"Error": "news does nto exist"}
